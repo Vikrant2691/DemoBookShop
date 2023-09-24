@@ -15,7 +15,7 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
-          cache: mvn
+          cache: maven
       - name: Code vulnerability scanning
         uses: anchore/scan-action@v3
         id: scan
