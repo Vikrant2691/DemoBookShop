@@ -6,3 +6,22 @@ server:
     thread:
       max: 50
       min-spare: 5
+
+service:
+  greeting: Hello
+
+spring:
+  application:
+    name: catalog-service
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+      request-connect-timeout: 5000
+      request-read-timeout: 5000
+  datasource:
+    url: jdbc:tc:postgresql:16.0:///
+  hikari:
+    connection-timeout: 2000
+    maximum-pool-size: 5

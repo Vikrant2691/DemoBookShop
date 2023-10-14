@@ -17,14 +17,14 @@ public class BookValidationTests {
     private static Validator validator;
 
     @BeforeAll
-    static void setUp(){
-        ValidatorFactory validatorFactory= Validation.buildDefaultValidatorFactory();
+    static void setUp() {
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
         validator = validatorFactory.getValidator();
     }
 
     @Test
-    void whenAllFieldsCorrectThanValidationSucceeds(){
-        var book = new Book("10293994","Title","somebody",10.99);
+    void whenAllFieldsCorrectThanValidationSucceeds() {
+        var book = Book.of("10293994", "Publisher", "Title", "somebody", 10.99);
 
         Set<ConstraintViolation<Book>> violations = validator.validate(book);
 
